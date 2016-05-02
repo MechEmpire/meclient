@@ -14,15 +14,16 @@ public:
 
     const std::string &get_address() const;
 
-    const std::string &get_port() const;
+    unsigned short get_port() const;
 
 private:
-    std::string address_;
-    std::string port_;
-
     void config_address(const boost::program_options::variables_map &variables_map);
 
     void config_port(const boost::program_options::variables_map &variables_map);
+
+private:
+    std::string address_;
+    unsigned short port_;
 };
 
 

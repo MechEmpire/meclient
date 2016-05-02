@@ -5,4 +5,4 @@ ADD_SUBDIRECTORY(client)
 ADD_SUBDIRECTORY(message)
 
 ADD_EXECUTABLE(meclient main.cpp app.h app.cpp)
-TARGET_LINK_LIBRARIES(meclient argument)
+TARGET_LINK_LIBRARIES(meclient argument client)

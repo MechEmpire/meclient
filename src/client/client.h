@@ -7,19 +7,23 @@
 
 #include <cstdint>
 #include <string>
+#include <memory>
 #include <boost/asio.hpp>
 
 class client {
-    using namespace boost::asio::ip;
-    using resolver_type = udp::resolver;
+    using socket_type = boost::asio::ip::udp::socket;
     using io_service_type = boost::asio::io_service;
+    using unique_socket_ptr = std::unique_ptr<socket_type>;
 public:
-    client(std::string address, std::string port);
+    client(std::string address, unsigned short port);
 
+//  void send()
+
+//  void receive()
 
 private:
-    io_service_type io_service;
-    resolver_type resolver;
+    io_service_type io_service_;
+    unique_socket_ptr socket_ptr_;
 };
 
 

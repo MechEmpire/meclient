@@ -15,7 +15,7 @@ argument::argument(int argc, const char *argv[]) {
     description.add_options()
             ("help,h", "produce help message")
             ("address,a", po::value<string>(), "set server address")
-            ("port,p", po::value<string>(), "set server port");
+            ("port,p", po::value<ushort>(), "set server port");
 
     po::variables_map variables_map;
     po::store(po::parse_command_line<char>(argc, argv, description), variables_map);
@@ -31,7 +31,7 @@ argument::argument(int argc, const char *argv[]) {
 
 void argument::config_port(const boost::program_options::variables_map &variables_map) {
     if (variables_map.count("port")) {
-        port_ = variables_map["port"].as<string>();
+        port_ = variables_map["port"].as<ushort>();
         cout << "Port is " << port_ << ".\n";
     } else {
         cout << "Please input the port or the program will never run!\n";
@@ -43,15 +43,15 @@ void argument::config_address(const boost::program_options::variables_map &varia
         address_ = variables_map["address"].as<string>();
         cout << "Address is " << address_ << ".\n";
     } else {
-        address_ = "locolhost";
+        address_ = "127.0.0.1";
         cout << "The address will be set to " << address_ << " by default.\n";
     }
 }
 
-const std::string &argument::get_address() const {
+const string &argument::get_address() const {
     return address_;
 }
 
-const std::string &argument::get_port() const {
+unsigned short argument::get_port() const {
     return port_;
 }
