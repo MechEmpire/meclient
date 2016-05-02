@@ -1,0 +1,22 @@
+syntax = "proto2";
+import "bullet.proto";
+import "engine.proto";
+import "weapon.proto";
+
+message RGBColor {
+    required int32 red = 1;
+    required int32 green = 2;
+    required int32 blue = 3;
+}
+
+message RobotInitRequest {
+    required string name = 1;
+    required RGBColor weaponColor = 2;
+    required Weapon weaponType = 3;
+    required RGBColor engineColor = 4;
+    required Engine engineType = 5;
+};
+
+message RobotInitRespond {
+    required int32 robotID = 1;
+}

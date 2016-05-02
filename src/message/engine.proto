@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+enum Engine {
+    AFV = 0;
+    Robotman = 1;
+    Spider = 2;
+    UFO = 3;
+}
