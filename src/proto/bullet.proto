@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+enum Bullet {
+    Bullet_Cannonball = 0;
+    Bullet_ElectricSaw = 1;
+    Bullet_Grenade = 2;
+    Bullet_MecinegunBall = 3;
+    Bullet_Mine = 4;
+    Bullet_PlasmaBall = 5;
+    Bullet_PrismLaser = 6;
+    Bullet_RPGBall = 7;
+    Bullet_ShotgunBall = 8;
+    Bullet_TeslaLightning = 9;
+    Bullet_TinyBall = 10;
+    Bullet_TrackingMissile = 11;
+}

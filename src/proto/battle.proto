@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+service BattleService {
+    rpc Battle (BattleRequest) returns (BattleReply) {
+    }
+}
+
+message BattleRequest {
+    //Battle Request
+    string reserved = 1;
+}
+
+message BattleReply {
+    //Battle Request
+    string reserved = 2;
+}

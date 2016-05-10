@@ -1,0 +1,10 @@
+syntax = "proto3";
+import "init.proto";
+import "battle.proto";
+
+service MESerivce {
+    rpc MEInit (InitRequest) returns (InitReply) {
+    }
+    rpc MEBattle (BattleRequest) returns (BattleReply) {
+    }
+}

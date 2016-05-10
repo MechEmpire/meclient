@@ -14,7 +14,9 @@ public:
 
     const std::string &get_address() const;
 
-    unsigned short get_port() const;
+    const std::string &get_port() const;
+
+    const std::string get_channel() const;
 
 private:
     void config_address(const boost::program_options::variables_map &variables_map);
@@ -23,7 +25,7 @@ private:
 
 private:
     std::string address_;
-    unsigned short port_;
+    std::string port_;
 };
 
 

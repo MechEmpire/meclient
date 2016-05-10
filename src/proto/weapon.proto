@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+enum Weapon_Type {
+    Weapon_Cannon = 0;
+    Weapon_ElectricSaw = 1;
+    Weapon_GrenadeThrower = 2;
+    Weapon_Machinegun = 3;
+    Weapon_MineLayer = 4;
+    Weapon_MissileLauncher = 5;
+    Weapon_PlasmaTorch = 6;
+    Weapon_Prism = 7;
+    Weapon_RPG = 8;
+    Weapon_Shotgun = 9;
+    Weapon_Tesla = 10;
+}

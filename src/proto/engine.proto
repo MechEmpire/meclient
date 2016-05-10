@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+enum Engine_Type {
+    Engine_AFV = 0;
+    Engine_Robotman = 1;
+    Engine_Spider = 2;
+    Engine_UFO = 3;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+import "weapon.proto";
+import "engine.proto";
+
+message InitRequest {
+    Weapon_Type weapon = 1;
+    Engine_Type engine = 2;
+}
+
+message InitReply {
+    int32 robotID = 1;
+}
