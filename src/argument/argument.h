@@ -12,6 +12,8 @@ class argument {
 public:
     argument(int argc, const char *argv[]);
 
+    bool is_inited() const;
+
     const std::string &get_address() const;
 
     const std::string &get_port() const;
@@ -24,6 +26,7 @@ private:
     void config_port(const boost::program_options::variables_map &variables_map);
 
 private:
+    bool inited_;
     std::string address_;
     std::string port_;
 };

@@ -10,7 +10,7 @@ namespace po = boost::program_options;
 using std::string;
 using std::cout;
 
-argument::argument(int argc, const char *argv[]) {
+argument::argument(int argc, const char *argv[]) : inited_(false) {
     po::options_description description("Allowed options");
     description.add_options()
             ("help,h", "produce help message")
@@ -21,9 +21,10 @@ argument::argument(int argc, const char *argv[]) {
     po::store(po::parse_command_line<char>(argc, argv, description), variables_map);
     po::notify(variables_map);
 
-    if (variables_map.count("help")) {
+    if (argc < 2 || variables_map.count("help")) {
         cout << description << "\n";
     } else {
+        inited_ = true;
         config_address(variables_map);
         config_port(variables_map);
     }
@@ -46,6 +47,10 @@ void argument::config_address(const boost::program_options::variables_map &varia
         address_ = "127.0.0.1";
         cout << "The address will be set to " << address_ << " by default.\n";
     }
+}
+
+bool argument::is_inited() const {
+    return inited_;
 }
 
 const string &argument::get_address() const {
