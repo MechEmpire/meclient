@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-enum Bullet {
+enum Bullet_Type {
     Bullet_Cannonball = 0;
     Bullet_ElectricSaw = 1;
     Bullet_Grenade = 2;

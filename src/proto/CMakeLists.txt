@@ -9,6 +9,7 @@ SET(ProtoFiles
         bullet.proto
         engine.proto
         init.proto
+        location.proto
         serivce.proto
         weapon.proto)
 
